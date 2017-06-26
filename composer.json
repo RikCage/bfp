@@ -1,0 +1,25 @@
+{
+    "name": "rikcage/yii2-bfp",
+    "description": "Brute-force protect in YII2",
+    "keywords": ["yii", "bfp"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rik Cage",
+            "email": "rikcage@gmail.com",
+            "homepage": "https://github.com/rikcage/bfp"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "support": {
+        "issues": "https://github.com/rikcage/bfp/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "RikCage\\bfp\\": ""
+        }
+    }
+}
