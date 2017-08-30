@@ -17,17 +17,11 @@ class BfpBehavior extends AttributeBehavior
 	private $pages_bfp_settings;
 
 	private function isProtectedPage() {
-        $route = Yii::$app->getRequest()->resolve();
-		$routePathTmp = explode('/', $route[0]);
-		
-		$actionVariant = array_pop($routePathTmp);
-		
-		$routePathTmp[] = $actionVariant;
-		$routePathTmp = array_diff($routePathTmp, array(''));
-		if(Yii::$app->controller->action->id != $actionVariant){
-			$routePathTmp[] = Yii::$app->controller->action->id;
-		}
-		
+
+		$routePathTmp = array();
+		$routePathTmp[] = Yii::$app->controller->id;
+		$routePathTmp[] = Yii::$app->controller->action->id;
+
 		$routeVariant = null;
 		foreach ($routePathTmp as $routePart) {
             $routeVariant .= (strlen($routeVariant))? '/' . $routePart: $routePart;
